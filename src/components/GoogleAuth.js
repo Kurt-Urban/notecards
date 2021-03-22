@@ -14,10 +14,6 @@ const GoogleAuth = props => {
                 auth.current = window.gapi.auth2.getAuthInstance();
                 setSignedIn(auth.current.isSignedIn.get());
                 auth.current.isSignedIn.listen(onAuthChange)
-                // const authParam = window.gapi.auth2.getAuthInstance();
-                // setAuth(authParam)
-                // onAuthChange(authParam.isSignedIn.get(), authParam);
-                // authParam.isSignedIn.listen(onAuthChange);
             })
         })
     }, [isSignedIn]);
@@ -26,14 +22,6 @@ const GoogleAuth = props => {
         setSignedIn(auth.current.isSignedIn.get())
     }
 
-    // const onAuthChange = (isSignedIn, authParam) => {
-    //     if (isSignedIn) {
-    //         console.log(authParam.currentUser.get().getId())
-    //         return props.signIn(authParam.currentUser.get().getId())
-    //     } else {
-    //         props.signOut();
-    //     }
-    // }
     const onSignInClick = () => {
         auth.current.signIn();
     };
