@@ -51,7 +51,7 @@ const GoogleAuth = props => {
 }
 
 const mapStateToProps = state => {
-    return { isSignedIn: state.window.gapi.auth2.getAuthInstance().isSignedIn };
+    return { auth: state.auth.current };
 };
 
-export default connect(null, { signIn, signOut })(GoogleAuth);
+export default connect(mapStateToProps, { signIn, signOut })(GoogleAuth);
