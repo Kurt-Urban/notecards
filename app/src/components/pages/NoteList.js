@@ -3,49 +3,37 @@ import { connect } from 'react-redux';
 import { fetchNotes } from '../../actions';
 
 const NoteList = props => {
-    const [display, setDisplay] = useState({});
-
     useEffect(() => {
-        setDisplay(props.fetchNotes())
+        props.fetchNotes()
     }, [])
 
-    // const listValidate = (list) => {
-    //     if (list.userId === props.currentUserId) {
-    //         return (
-    //             <div className="primary">Your List</div>
-    //         )
-    //     }
-    // }
-
-    // const renderList = () => {
-    //     return notes.map(note => {
-    //         return (
-    //             <div className="ui container" key={note.id}>
-    //                 <div className="ui header">
-    //                     My Lists
-    //                 </div>
-    //                 <div className="item">
-
-    //                 </div>
-    //             </div>
-    //         )
-    //     })
-    // }
+    const renderList = () => {
+        return props.lists.map(list => {
+            return (
+                <div className="item" key={list.id}>
+                    <div className="content">
+                        {list.content}
+                    </div>
+                </div>
+            );
+        })
+    };
 
     return (
         <div>
             <h2>Your Lists</h2>
-            {/* {renderList()} */}
+            {renderList()}
         </div>
     )
 }
 
-// const mapStateToProps = state => {
-//     return {
-//         lists: Object.values(state.lists),
-//         currentUserId: state.auth.current.userId,
-//         isSignedIn: state.auth.current.isSignedIn
-//     };
-// }
+const mapStateToProps = state => {
+    return {
+        auth: state.auth,
+        userId: state.auth.userId,
+        lists: Object.values(state.listNotes),
+        isSignedIn: state.auth.isSignedIn
+    };
+}
 
-export default connect(null, { fetchNotes })(NoteList);
+export default connect(mapStateToProps, { fetchNotes })(NoteList);

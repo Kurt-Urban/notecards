@@ -1,7 +1,8 @@
 {
     "notes": [
         {
-            "content": "Testing"
+            "content": "Testing",
+            "id": 1
         }
     ]
 }

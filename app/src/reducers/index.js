@@ -5,5 +5,4 @@ import noteListReducer from './noteListReducer';
 export default combineReducers({
     auth: authReducer,
     listNotes: noteListReducer
-
-})
+});
