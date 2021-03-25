@@ -8,7 +8,7 @@
 //     useEffect(() => {
 //         window.gapi.load('client:auth2', () => {
 //             window.gapi.client.init({
-//                 clientId: '596183468753-q4g8spo37nq0frolk8inqln8jev7gifi.apps.googleusercontent.com',
+//                 clientId: '',
 //                 scope: 'email',
 //             }).then(() => {
 //                 auth.current = window.gapi.auth2.getAuthInstance();
