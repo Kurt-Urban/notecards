@@ -4,5 +4,15 @@
             "content": "Testing",
             "id": 1
         }
+    ],
+    "users": [
+        {
+            "userid": {
+                "email": "kurt@notecards.com",
+                "password": "123",
+                "firstName": "Kurt",
+                "lastName": "Urban"
+            }
+        }
     ]
 }

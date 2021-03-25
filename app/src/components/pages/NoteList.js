@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchNotes } from '../../actions';
 
@@ -6,6 +6,7 @@ const NoteList = props => {
     useEffect(() => {
         props.fetchNotes()
     }, [])
+
 
     const renderList = () => {
         return props.lists.map(list => {
@@ -29,10 +30,7 @@ const NoteList = props => {
 
 const mapStateToProps = state => {
     return {
-        auth: state.auth,
-        userId: state.auth.userId,
         lists: Object.values(state.listNotes),
-        isSignedIn: state.auth.isSignedIn
     };
 }
 

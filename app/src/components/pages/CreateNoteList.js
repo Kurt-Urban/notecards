@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
-const CreateNoteList = () => {
+const CreateNoteList = props => {
+    useEffect(() => {
+        console.log(props)
+    }, [])
     return (
-        <div>New List</div>
+        <div>
+
+        </div>
     )
 }
 
-export default connect(null)(CreateNoteList);
+const mapStateToProps = state => { };
+
+export default connect(mapStateToProps)(CreateNoteList);
