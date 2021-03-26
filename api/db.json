@@ -7,12 +7,18 @@
     ],
     "users": [
         {
-            "userid": {
-                "email": "kurt@notecards.com",
-                "password": "123",
-                "firstName": "Kurt",
-                "lastName": "Urban"
-            }
+            "userId": "23",
+            "email": "kurturban00@gmail.com",
+            "password": "12397",
+            "firstName": "Kurt",
+            "lastName": "Urban"
+        },
+        {
+            "userId": "1",
+            "email": "k@g",
+            "password": "1",
+            "firstName": "Kyle",
+            "lastName": "Gray"
         }
     ]
 }
